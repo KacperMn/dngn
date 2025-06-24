@@ -7,6 +7,7 @@ func add_door(direction: int) -> void:
 	add_child(door)
 	door.position = Vector2(64, 0).rotated(-PI * direction / 2.0)
 	door.rotation = -PI * direction / 2.0
+
 	
 func set_icon(icon: Texture2D) -> void:
 	$icon.texture = icon

@@ -1,21 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bb62bn0gqtps1"]
+[gd_scene load_steps=2 format=3 uid="uid://bb62bn0gqtps1"]
 
 [ext_resource type="Script" uid="uid://c1cjgnmofuwja" path="res://src/dungeon_generator.gd" id="1_44sf2"]
-[ext_resource type="PackedScene" uid="uid://d0s7bflcvuxwj" path="res://src/room.tscn" id="2_cwj6d"]
-[ext_resource type="Texture2D" uid="uid://dfcjqj8bqlpwc" path="res://assets/icons/card_lift.svg" id="3_8isie"]
-[ext_resource type="Texture2D" uid="uid://cvjv4dk43pkf3" path="res://assets/icons/card_outline_place.svg" id="4_vgiiu"]
-[ext_resource type="Texture2D" uid="uid://bykyyyhvv21yb" path="res://assets/icons/sword.svg" id="5_b8jmi"]
-[ext_resource type="Texture2D" uid="uid://cmfyjki3s234g" path="res://assets/icons/award.svg" id="6_hgtue"]
-[ext_resource type="Texture2D" uid="uid://dxoerbbpmp5ov" path="res://assets/icons/character.svg" id="7_1nrir"]
-[ext_resource type="Texture2D" uid="uid://7qaaw65rixte" path="res://assets/icons/campfire.svg" id="8_kxk2r"]
-[ext_resource type="Texture2D" uid="uid://c8be1tedf8y34" path="res://assets/icons/skull.svg" id="9_1dwvn"]
-[ext_resource type="Texture2D" uid="uid://babk8rxfkxwye" path="res://assets/icons/dice_6.svg" id="10_e4eo6"]
 
 [node name="dungeon_generator" type="Node2D"]
 script = ExtResource("1_44sf2")
-_room_scene = ExtResource("2_cwj6d")
-_room_icons = Array[Texture2D]([null, ExtResource("3_8isie"), ExtResource("4_vgiiu"), ExtResource("5_b8jmi"), ExtResource("6_hgtue"), ExtResource("7_1nrir"), ExtResource("8_kxk2r"), ExtResource("9_1dwvn"), ExtResource("10_e4eo6")])
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(850, 600)
-zoom = Vector2(0.5, 0.5)

@@ -1,15 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfa4x72vwpa8x"]
+[gd_scene load_steps=14 format=3 uid="uid://dfa4x72vwpa8x"]
 
 [ext_resource type="Script" uid="uid://hwt005pte3ql" path="res://src/game_manager.gd" id="1_x17l7"]
 [ext_resource type="PackedScene" uid="uid://bsyin27tfaiuw" path="res://src/level_manager.tscn" id="2_63v1u"]
+[ext_resource type="PackedScene" uid="uid://d0s7bflcvuxwj" path="res://src/room.tscn" id="2_gr18m"]
+[ext_resource type="Texture2D" uid="uid://dfcjqj8bqlpwc" path="res://assets/icons/card_lift.svg" id="3_06hdx"]
 [ext_resource type="PackedScene" uid="uid://bb62bn0gqtps1" path="res://src/dungeon_generator.tscn" id="3_8k73v"]
+[ext_resource type="Texture2D" uid="uid://cvjv4dk43pkf3" path="res://assets/icons/card_outline_place.svg" id="4_pyc2s"]
+[ext_resource type="Script" uid="uid://cnjswcfgstna6" path="res://src/room_drawer.gd" id="4_vo8pw"]
+[ext_resource type="Texture2D" uid="uid://bykyyyhvv21yb" path="res://assets/icons/sword.svg" id="5_i1sib"]
+[ext_resource type="Texture2D" uid="uid://cmfyjki3s234g" path="res://assets/icons/award.svg" id="6_valm5"]
+[ext_resource type="Texture2D" uid="uid://dxoerbbpmp5ov" path="res://assets/icons/character.svg" id="7_endqp"]
+[ext_resource type="Texture2D" uid="uid://7qaaw65rixte" path="res://assets/icons/campfire.svg" id="8_a87jq"]
+[ext_resource type="Texture2D" uid="uid://c8be1tedf8y34" path="res://assets/icons/skull.svg" id="9_xue57"]
+[ext_resource type="Texture2D" uid="uid://babk8rxfkxwye" path="res://assets/icons/dice_6.svg" id="10_1ra7t"]
 
 [node name="game_manager" type="Node2D"]
 script = ExtResource("1_x17l7")
+_room_scene = ExtResource("2_gr18m")
+_room_icons = Array[Texture2D]([null, ExtResource("3_06hdx"), ExtResource("4_pyc2s"), ExtResource("5_i1sib"), ExtResource("6_valm5"), ExtResource("7_endqp"), ExtResource("8_a87jq"), ExtResource("9_xue57"), ExtResource("10_1ra7t")])
 
 [node name="dungeon_generator" parent="." instance=ExtResource("3_8k73v")]
-position = Vector2(57, 155)
 
 [node name="level_manager" parent="." instance=ExtResource("2_63v1u")]
 _start = Vector2i(-1, -1)
-level = 1
+
+[node name="room_drawer" type="Node2D" parent="."]
+script = ExtResource("4_vo8pw")

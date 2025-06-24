@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="dngn"
-run/main_scene="res://src/trial_scene.tscn"
+run/main_scene="uid://o0qngn0ppvip"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,3 +21,4 @@ config/icon="res://icon.svg"
 2d_physics/layer_2="floor"
 2d_physics/layer_3="walls"
 2d_physics/layer_4="enemies"
+2d_physics/layer_5="door"

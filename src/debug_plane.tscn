@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://o0qngn0ppvip"]
+
+[ext_resource type="PackedScene" uid="uid://bajnemrqtwpvl" path="res://src/player.tscn" id="1_1s2hf"]
+[ext_resource type="PackedScene" uid="uid://d257owjyoj0r3" path="res://src/door.tscn" id="2_vvyvo"]
+
+[node name="debug_plane" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 618.0
+offset_bottom = 334.0
+
+[node name="player" parent="." instance=ExtResource("1_1s2hf")]
+position = Vector2(262, 125)
+
+[node name="door" parent="." instance=ExtResource("2_vvyvo")]
+position = Vector2(427, 117)
