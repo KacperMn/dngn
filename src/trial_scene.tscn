@@ -6,10 +6,7 @@
 [node name="trial_scene" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_7k2mv")]
-position = Vector2(221, 148)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(192, 108)
-zoom = Vector2(3, 3)
+z_index = 2
+position = Vector2(194, 144)
 
 [node name="TileMapLayer" parent="." instance=ExtResource("2_qackf")]

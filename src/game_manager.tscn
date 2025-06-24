@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfa4x72vwpa8x"]
+
+[ext_resource type="Script" uid="uid://hwt005pte3ql" path="res://src/game_manager.gd" id="1_x17l7"]
+[ext_resource type="PackedScene" uid="uid://bsyin27tfaiuw" path="res://src/level_manager.tscn" id="2_63v1u"]
+[ext_resource type="PackedScene" uid="uid://bb62bn0gqtps1" path="res://src/dungeon_generator.tscn" id="3_8k73v"]
+
+[node name="game_manager" type="Node2D"]
+script = ExtResource("1_x17l7")
+
+[node name="dungeon_generator" parent="." instance=ExtResource("3_8k73v")]
+position = Vector2(57, 155)
+
+[node name="level_manager" parent="." instance=ExtResource("2_63v1u")]
+_start = Vector2i(-1, -1)
+level = 1

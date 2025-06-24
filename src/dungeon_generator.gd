@@ -1,12 +1,13 @@
 extends Node2D
 
-@export var _dimensions : Vector2i = Vector2i(7, 5) # Dimensions of the dungeon grid
-@export var _start : Vector2i = Vector2i(3, 0) # Entrance position in the grid
-@export var _critical_path_length : int = 13 # Length of the critical path
-@export var _branches : int = 3 # Number of branches to generate
-@export var _branch_length : Vector2i = Vector2i(1, 4) # Length range for branches
 @export var _room_scene : PackedScene
-@export var _room_icons : Array[Texture2D] # List of icons for rooms
+@export var _room_icons : Array[Texture2D]
+
+var _dimensions : Vector2i
+var _start : Vector2i
+var _critical_path_length : int
+var _branches : int
+var _branch_length : Vector2i
 
 var dungeon : Array
 var _branch_candidates : Array[Vector2i]
@@ -24,7 +25,6 @@ const DIRECTIONS : Array[Vector2i] = [
 ]
 const BOTTOM_LEFT_CORNER: Vector2 = Vector2(320, 896)
 const ROOM_SIZE: Vector2 = Vector2(160, 160)
-
 const Paths = ["CRITICAL", "BRANCH"]
 
 # Contents of the dungeon cells
@@ -41,11 +41,13 @@ enum Contents {
 }
 
 func _ready() -> void:
+	pass
+
+func generate() -> void:
 	_initialize_dungeon()
 	_place_entrance()
-	_generate_path(_start, _critical_path_length, Paths[0], [Contents.CAMP, Contents.BOSS, Contents.TREASURE])
+	_generate_path(_start, _critical_path_length, Paths[0], [Contents.CAMP, Contents.BOSS, Contents.STAIRS])
 	_generate_branches()
-	#_print_dungeon()
 	_draw_dungeon()
 
 func _initialize_dungeon() -> void:
@@ -139,3 +141,6 @@ func _draw_dungeon() -> void:
 					if dungeon[x][y] & Contents.values()[i]:
 						room.set_icon(_room_icons[i])
 						break
+
+func grid_to_world(grid_pos: Vector2i) -> Vector2:
+	return BOTTOM_LEFT_CORNER + Vector2(grid_pos.x, -grid_pos.y) * ROOM_SIZE

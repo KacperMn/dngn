@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bajnemrqtwpvl"]
 
-[ext_resource type="Texture2D" uid="uid://d0obi7o8nwskp" path="res://assets/Tilemap/tilemap.png" id="1_grvxn"]
+[ext_resource type="Texture2D" path="res://assets/Tilemap/tilemap.png" id="1_grvxn"]
 [ext_resource type="Script" uid="uid://buxmsvlpeugfb" path="res://src/player_movement.tres.gd" id="1_np7xi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_krtdm"]
@@ -9,6 +9,7 @@ height = 14.0
 
 [node name="player" type="CharacterBody2D"]
 collision_mask = 3
+motion_mode = 1
 script = ExtResource("1_np7xi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -21,3 +22,5 @@ position = Vector2(0, -8)
 texture = ExtResource("1_grvxn")
 region_enabled = true
 region_rect = Rect2(0, 119, 16, 16)
+
+[node name="Camera2D" type="Camera2D" parent="."]
